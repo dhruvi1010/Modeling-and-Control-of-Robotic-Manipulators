@@ -1,22 +1,22 @@
 # Modeling-and-Control-of-Robotic-Manipulators
 
 **_Due to university intellectual property restrictions and data privacy policies, the code for this project cannot be uploaded to a public GitHub repository._**
-### ROS-Controlled Robotic Arm Motion Planning and Simulation with MATLAB
+## ROS-Controlled Robotic Arm Motion Planning and Simulation with MATLAB
 
-The project aims to develop a robust control system for a UR robotic arm using MATLAB and ROS, focusing on precise trajectory planning and execution. Through the integration of inverse kinematics, simulation in Gazebo, and communication with ROS, the system will enable users to specify end-effector poses and execute smooth motions while monitoring real-time joint states and velocities. By incorporating both topic-based and action-based interfaces, the project seeks to provide a comprehensive solution for controlling and simulating robotic arm movements, with applications in research, automation, and industrial settings.
+The project aims to develop a robust control system for a UR robotic arm using MATLAB and ROS, focusing on precise trajectory planning and execution. Through the integration of inverse kinematics, simulation in Gazebo, and communication with ROS, the system will enable users to specify end-effector poses and execute smooth motions while monitoring real-time joint states and velocities. By incorporating both topic-based and action-based interfaces, the project seeks to provide a comprehensive solution for controlling and simulating robotic arm movements, with applications in research, automation, and industrial settings. Here 4 parts listed below:
 
-### Robot Motion Control
+### 1.Robot Motion Control
 1. **Inverse Kinematics**: Generate an inverse kinematics solver object (`iksolver`) for the rigid body tree object (`ur`).
 2. **Define a Target Pose**: Define a target pose in terms of a translation and rotation by Euler angles.
 3. **Determine Target Configuration**: Determine the inverse kinematics solution (`targetConf`) with the initialized `iksolver` object for the target pose of the end effector link frame 'ee_link'.
 
-### ROS
+### 2.ROS
 4. **Simulate UR Robot Motion in Gazebo**: Start the UR robot motion simulation in Gazebo using specified launch files.
 5. **Connect to ROS**: Establish a connection to the ROS master on the local host from within MATLAB.
 6. **Show Topics**: Query and obtain information about ROS topics, particularly the '/ur10/joint_states' topic.
 7. **Instantiate Subscriber**: Create a subscriber in MATLAB for the '/ur10/joint_states' topic to receive joint state messages.
 
-### Trajectory Control via Topic Interface
+### 3.Trajectory Control via Topic Interface
 8. **Inspect ROS Message Structure**: Understand the structure of trajectory commands published on the '/ur10/vel_based_pos_traj_controller/command' topic.
 9. **Perform Point-to-Point Motion**: Execute a point-to-point motion from the current configuration to the target configuration.
 10. **Monitor Joint State Temporal Evolution**: Replace `pause` with a rated loop that subscribes to '/ur10/joint_states' topic to monitor joint state evolution.
@@ -24,7 +24,7 @@ The project aims to develop a robust control system for a UR robotic arm using M
 12. **Prepare Motion via Two Way-Points**: Compose a trajectory with multiple way-points.
 13. **Perform Motion via Two Way-Points**: Command, record, and plot joint motion through multiple way-points.
 
-### Trajectory Control via Action Server and Client
+### 4.Trajectory Control via Action Server and Client
 14. **Inspect Action Structure**: Understand the structure of the action message and client-server interaction.
 15. **Display Actions on ROS Network**: Confirm the existence of an action for trajectory control and inspect its topic.
 16. **Instantiate Action Client**: Create an action client for trajectory following.
@@ -34,7 +34,7 @@ The project aims to develop a robust control system for a UR robotic arm using M
 20. **Follow Trajectory (Non-blocking + Monitoring)**: Send trajectory command via action client without waiting for completion and monitor feedback.
 21. **Plot Joint States and Velocities**: Plot joint states and velocities for the commanded sequence of way-points.
 
-Detailed steps :
+## Detailed steps :
 
 **Inverse Kinematics**
 
